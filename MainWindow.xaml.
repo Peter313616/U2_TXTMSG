@@ -1,0 +1,57 @@
+/*
+ * Peter McEwen
+ * Mar 29, 2018
+ * U2_TXTMSG
+ * Translates common text short forms
+ */
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace U2_Peter_TXTMSG
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+
+        public MainWindow()
+        {
+
+            InitializeComponent();
+        }
+
+        private void btnTranslate_Click(object sender, RoutedEventArgs e)
+        {
+
+            string TextEntered = txtInput.Text;
+
+            TextEntered = TextEntered.Replace("CU", "see you");
+            TextEntered = TextEntered.Replace(":-)", "I'm happy");
+            TextEntered = TextEntered.Replace(":-(","I'm unhappy");
+            TextEntered = TextEntered.Replace(";-)", "wink");
+            TextEntered = TextEntered.Replace(":-P", "stick out my tongue");
+            TextEntered = TextEntered.Replace("(˜.˜)", "sleepy");
+            TextEntered = TextEntered.Replace("TA", "totally awesome");
+            TextEntered = TextEntered.Replace("CCC", "Canadian Computing Competition");
+            TextEntered = TextEntered.Replace("CUZ", "because");
+            TextEntered = TextEntered.Replace("TTYL", "talk to you later");
+            TextEntered = TextEntered.Replace("YW", "you’re welcome");
+            TextEntered = TextEntered.Replace("TY", "thank-you");
+            
+            lblOutput.Content = TextEntered;
+        }
+    }
+}
